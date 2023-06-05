@@ -1,19 +1,27 @@
 // Get all correct on correct page
+let i = document.getElementsByClassName("answer")
 
 let b = []
 
 for (let n of i) {
 
+    let found = false;
+
     for (let x of n.children){
 
         if (x.classList.contains("correct")) {
 
-            b.push(x.children[1].children[1].children[0].innerHTML)}
+            b.push(x.children[1].children[1].children[0].innerHTML); found = true;}
 
-        else if (x.classList.contains("incorrect")) {b.push(null)}}}
+        else if (x.classList.contains("incorrect")) {b.push(null); found = true;}}
+
+    if (!found) {
+
+        b.push(null)
+
+    }}
 
 console.log(b)
-
 
 
 
